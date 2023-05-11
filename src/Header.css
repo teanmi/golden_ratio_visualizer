@@ -35,3 +35,15 @@
   justify-content: center;
   margin: 4px;
 }
+
+.header__inputContainer {
+  display: flex;
+}
+
+.header__inputDescription {
+  margin-right: 8px;
+}
+
+#header__scaleFactor {
+  width: 100px;
+}

@@ -3,46 +3,15 @@
 }
 
 .visualizer__container {
-  border: 1px solid black;
+  border: 5px solid black;
   width: 100%;
   height: 700px;
   position: relative;
+  overflow: hidden;
 }
 
 .fibonacci__box {
   position: absolute;
   border: 1px solid black;
-  background-color: red;
-}
-
-.fibonacci__box1 {
-  left: 50%;
-  top: 50%;
-  background-color: blue;
-  width: 10px;
-  height: 10px;
-}
-
-.fibonacci__box2 {
-  background-color: red;
-  left: calc(50% + 10px);
-  top: 50%;
-  height: 10px;
-  width: 10px;
-}
-
-.fibonacci__box3 {
-  background-color: pink;
-  left: 50%;
-  top: calc(50% - 2px);
-  height: 2px;
-  width: 2px;
-}
-.fibonacci__box4 {
-  background-color: purple;
-  border: 1px;
-  left: calc(50% - 3px);
-  top: calc(50% - 2px);
-  height: 3px;
-  width: 3px;
+  background-color: white;
 }
