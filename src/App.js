@@ -11,6 +11,9 @@ function App() {
     <div>
       <Header scaleFactor={scaleFactor} setScaleFactor={setScaleFactor}/>
       <Visualizer scaleFactor={scaleFactor}/>
+      <footer>
+        &copy; 2023 Michael Telakowicz
+      </footer>
     </div>
   );
 }

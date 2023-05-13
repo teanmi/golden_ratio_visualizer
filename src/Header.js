@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect,  } from "react";
 import "./Header.css";
 import { useDispatch, useSelector } from "react-redux";
 import { decrement, increment } from "./redux/fibonacciReducer";
 
-const Header = ({scaleFactor, setScaleFactor}) => {
+const Header = ({ scaleFactor, setScaleFactor }) => {
   const fibonacciNumbers = useSelector((state) => state.fibonacci.value);
   const dispatch = useDispatch();
+
 
   function updateScaleFactor() {
     const value = document.getElementById("header__scaleFactor").value;
@@ -13,15 +14,23 @@ const Header = ({scaleFactor, setScaleFactor}) => {
       return;
     }
     if (value !== Math.floor(value)) {
-      setScaleFactor(Math.round(value))
+      setScaleFactor(Math.round(value));
     }
     if (value < 1) {
       setScaleFactor(1);
     }
-    if (value > 9 ) {
-      setScaleFactor(9)
+    if (value > 9) {
+      setScaleFactor(9);
     }
   }
+
+  useEffect(() => {
+    if (fibonacciNumbers.length >= 20) {
+      document.getElementById("increment-button").style.pointerEvents = "none";
+
+    }
+    
+  }, [fibonacciNumbers]);
 
   return (
     <header id="header">
@@ -37,6 +46,7 @@ const Header = ({scaleFactor, setScaleFactor}) => {
       </div>
       <div className="header__buttons">
         <button
+          id="decrement-button"
           className="header__button"
           onClick={() => {
             dispatch(decrement());
@@ -45,6 +55,7 @@ const Header = ({scaleFactor, setScaleFactor}) => {
           -
         </button>
         <button
+          id="increment-button"
           className="header__button"
           onClick={() => {
             dispatch(increment());

@@ -1,18 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./Visualizer.css";
 import { useSelector } from "react-redux";
 
-
-const Visualizer = ({scaleFactor}) => {
- 
+const Visualizer = ({ scaleFactor }) => {
   const fibonacciNumbers = useSelector((state) => state.fibonacci.value);
 
   useEffect(() => {
-  }, []);
-
-  useEffect(() => {
-    console.log(scaleFactor)
-
     const directions = ["right", "down", "left", "up"];
 
     fibonacciNumbers?.forEach((num, fibIndex) => {
